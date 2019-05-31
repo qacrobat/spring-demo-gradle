@@ -13,4 +13,6 @@ public interface PlayerRepository {
 
     void deletePlayer(Long id);
 
+    long getNextId();
+
 }

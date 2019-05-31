@@ -23,14 +23,17 @@ public class PlayerServiceImpl implements PlayerService {
 
     @PostConstruct
     public void setUp(){
-        this.playerRepository.saveOrUpdate(new Player("Stefan", "Z", 1L,false));
-
+        createPlayer("Stefan","Z",false);
         playerRepository.findAll().stream().peek(s -> log.info(s.toString())).collect(Collectors.toList());
     }
 
     @Override
     public Player createPlayer(String name, String lastname, boolean vip){
-        return null;
+        Long nextId = playerRepository.getNextId();
+        final Player player = new Player(name,lastname,nextId,vip);
+
+        playerRepository.saveOrUpdate(player);
+        return player;
     }
 
 
