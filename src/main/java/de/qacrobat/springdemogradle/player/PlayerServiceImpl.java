@@ -17,15 +17,20 @@ public class PlayerServiceImpl implements PlayerService {
 
     private final PlayerRepository playerRepository;
 
-    public PlayerServiceImpl (@Qualifier("David") PlayerRepository playerRepository){
+    public PlayerServiceImpl (PlayerRepository playerRepository){
         this.playerRepository = playerRepository;
     }
 
     @PostConstruct
     public void setUp(){
-        this.playerRepository.save(new Player("Stefan", "Z", 1L,false));
+        this.playerRepository.saveOrUpdate(new Player("Stefan", "Z", 1L,false));
 
         playerRepository.findAll().stream().peek(s -> log.info(s.toString())).collect(Collectors.toList());
+    }
+
+    @Override
+    public Player createPlayer(String name, String lastname, boolean vip){
+        return null;
     }
 
 

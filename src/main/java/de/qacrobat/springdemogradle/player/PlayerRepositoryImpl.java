@@ -12,13 +12,23 @@ public class PlayerRepositoryImpl implements PlayerRepository {
     private Map<Long, Player> repository = new ConcurrentHashMap<>();
 
     @Override
-    public void save(Player player) {
+    public void saveOrUpdate(Player player) {
         repository.put(player.getId(), player);
     }
 
     @Override
     public Set<Player> findAll() {
         return repository.values().stream().collect(Collectors.toSet());
+    }
+
+    @Override
+    public void deletePlayer(Long id){
+
+    }
+
+    @Override
+    public Player findById(Long id){
+        return null;
     }
 
 }
