@@ -3,11 +3,12 @@ package de.qacrobat.springdemogradle.player;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-@Component("David")
+@Component
 public class PlayerRepositoryImpl implements PlayerRepository {
     private Map<Long, Player> repository = new ConcurrentHashMap<>();
 
@@ -27,7 +28,7 @@ public class PlayerRepositoryImpl implements PlayerRepository {
     }
 
     @Override
-    public Player findById(Long id){
+    public Optional<Player> findById(Long id){
         return null;
     }
 

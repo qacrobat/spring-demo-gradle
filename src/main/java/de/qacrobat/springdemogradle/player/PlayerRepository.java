@@ -1,5 +1,6 @@
 package de.qacrobat.springdemogradle.player;
 
+import java.util.Optional;
 import java.util.Set;
 
 public interface PlayerRepository {
@@ -8,7 +9,7 @@ public interface PlayerRepository {
 
     Set<Player> findAll();
 
-    Player findById(Long id);
+    Optional<Player> findById(Long id);
 
     void deletePlayer(Long id);
 
