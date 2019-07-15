@@ -6,5 +6,5 @@ import de.qacrobat.springdemogradle.player.steps.GivenPlayer;
 import de.qacrobat.springdemogradle.player.steps.ThenPlayer;
 import de.qacrobat.springdemogradle.player.steps.WhenPlayer;
 
-public class PlayerRepositoryImplTestJG extends ScenarioTest<GivenPlayer, WhenPlayer, ThenPlayer> {
+public class __PlayerRepositoryImplTestJG extends ScenarioTest<GivenPlayer, WhenPlayer, ThenPlayer> {
 }

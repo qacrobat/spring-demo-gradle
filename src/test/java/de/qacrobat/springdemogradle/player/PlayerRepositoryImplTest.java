@@ -1,5 +1,6 @@
 package de.qacrobat.springdemogradle.player;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,16 +27,18 @@ public class PlayerRepositoryImplTest {
     }
 
     @Test
-    public void shouldSaveNewSchuldner() {
+    public void shouldSaveNewPlayer() {
         // when
         testee.saveOrUpdate(playerMock);
 
         // then
         assertThat(testee.findById(PLAYER_ID).get()).isEqualTo(playerMock);
+        final Optional<Player> result = testee.findById(PLAYER_ID);
+        Assertions.assertThat(result.get()).isEqualTo(playerMock);
     }
 
     @Test
-    public void shouldDeleteSchuldner() {
+    public void shouldDeletePlayer() {
         // given
         testee.saveOrUpdate(playerMock);
 
