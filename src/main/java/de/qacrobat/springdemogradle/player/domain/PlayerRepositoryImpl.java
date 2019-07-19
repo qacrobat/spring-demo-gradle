@@ -1,4 +1,4 @@
-package de.qacrobat.springdemogradle.player;
+package de.qacrobat.springdemogradle.player.domain;
 
 import org.springframework.stereotype.Component;
 

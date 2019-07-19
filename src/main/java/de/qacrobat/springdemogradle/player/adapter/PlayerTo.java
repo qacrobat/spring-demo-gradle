@@ -1,19 +1,27 @@
 package de.qacrobat.springdemogradle.player.adapter;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiParam;
 import lombok.Getter;
 import lombok.Setter;
 
-@ApiModel
+import javax.validation.constraints.NotBlank;
+
 @Setter
 @Getter
-public class PlayerDTO {
-    @ApiParam(required = true, value = "Frank")
+@ApiModel("Player to create")
+public class PlayerTo {
+
+    @NotBlank
+    @ApiModelProperty(required = true, example = "Frank")
     private String name;
-    @ApiParam(required = true, value = "Mustermann")
+
+    @NotBlank
+    @ApiModelProperty(required = true, example = "Mustermann")
     private String lastname;
-    @ApiParam(required = false, value = "false")
+
+    @ApiModelProperty(example = "false")
     private boolean vip;
 
 }

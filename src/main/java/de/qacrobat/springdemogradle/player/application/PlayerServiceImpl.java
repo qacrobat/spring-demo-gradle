@@ -1,12 +1,14 @@
-package de.qacrobat.springdemogradle.player;
+package de.qacrobat.springdemogradle.player.application;
 
 
+import de.qacrobat.springdemogradle.player.domain.Player;
+import de.qacrobat.springdemogradle.player.domain.PlayerRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,5 +38,14 @@ public class PlayerServiceImpl implements PlayerService {
         return player;
     }
 
+    @Override
+    public Set<Player> getAllPlayers() {
+        return playerRepository.findAll();
+    }
+
+    @Override
+    public Player getPlayerById(Long id) {
+        return playerRepository.findById(id).get();
+    }
 
 }
