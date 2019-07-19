@@ -1,7 +1,7 @@
 package de.qacrobat.springdemogradle.player;
 
 
-import com.tngtech.jgiven.testng.ScenarioTest;
+import com.tngtech.jgiven.junit.ScenarioTest;
 import de.qacrobat.springdemogradle.player.steps.GivenPlayer;
 import de.qacrobat.springdemogradle.player.steps.ThenPlayer;
 import de.qacrobat.springdemogradle.player.steps.WhenPlayer;

@@ -1,5 +1,7 @@
 package de.qacrobat.springdemogradle.player;
 
+import de.qacrobat.springdemogradle.player.domain.Player;
+import de.qacrobat.springdemogradle.player.domain.PlayerRepositoryImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
