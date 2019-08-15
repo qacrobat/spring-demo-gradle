@@ -1,0 +1,58 @@
+{
+  "className": "de.qacrobat.springdemogradle.player.PlayerServiceImplTest",
+  "name": "Player Service Impl",
+  "scenarios": [
+    {
+      "className": "de.qacrobat.springdemogradle.player.PlayerServiceImplTest",
+      "testMethodName": "shouldCreatePlayer",
+      "description": "Should create player",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "create a player",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "create a player"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 13467017
+            },
+            {
+              "name": "a player created",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a player created"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 48787036
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 192665920
+        }
+      ],
+      "durationInNanos": 192665920,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {}
+}

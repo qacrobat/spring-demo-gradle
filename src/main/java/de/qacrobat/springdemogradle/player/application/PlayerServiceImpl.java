@@ -3,6 +3,7 @@ package de.qacrobat.springdemogradle.player.application;
 
 import de.qacrobat.springdemogradle.player.domain.Player;
 import de.qacrobat.springdemogradle.player.domain.PlayerRepository;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
