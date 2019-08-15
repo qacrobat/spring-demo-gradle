@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -21,7 +21,7 @@ public class PlayerAdapter {
 
     @GetMapping(path = "/players", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation("Returns list of all Players in the system.")
-    public Set<Player> players(){
+    public List<Player> players(){
         return playerService.getAllPlayers();
     }
 

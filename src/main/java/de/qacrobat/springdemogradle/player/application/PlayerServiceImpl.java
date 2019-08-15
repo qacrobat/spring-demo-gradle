@@ -7,15 +7,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 @Slf4j
 public class PlayerServiceImpl implements PlayerService {
-
-    private Map<String, PlayerRepository> repos;
 
     private final PlayerRepository playerRepository;
 
@@ -31,15 +28,13 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player createPlayer(String name, String lastname, boolean vip){
-        Long nextId = playerRepository.getNextId();
-        final Player player = new Player(name,lastname,nextId,vip);
-
-        playerRepository.saveOrUpdate(player);
+        final Player player = new Player(name,lastname,vip);
+        this.playerRepository.save(player);
         return player;
     }
 
     @Override
-    public Set<Player> getAllPlayers() {
+    public List<Player> getAllPlayers() {
         return playerRepository.findAll();
     }
 

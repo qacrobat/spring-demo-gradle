@@ -39,9 +39,7 @@ public class PlayerServiceImplTest {
         // then
         Assertions.assertThat(result.getName()).isEqualTo(VORNAME);
 
-        verify(playerRepositoryMock).saveOrUpdate(result);
-        verify(playerRepositoryMock).getNextId();
-        verifyNoMoreInteractions(playerRepositoryMock);
+        verify(playerRepositoryMock).save(result);
 
     }
 

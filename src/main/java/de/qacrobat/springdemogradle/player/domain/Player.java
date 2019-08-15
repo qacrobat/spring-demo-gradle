@@ -1,19 +1,33 @@
 package de.qacrobat.springdemogradle.player.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 @ToString
-@AllArgsConstructor
 @Getter
+@NoArgsConstructor
 public class Player {
+    @Id
+    @GeneratedValue
+    private Long id;
     private String name;
+    @Column(name = "last_name")
     private String lastname;
-    private final Long id;
     private boolean vip;
+
+    public Player(String name, String lastname, boolean vip){
+        this.name = name;
+        this.lastname = lastname;
+        this.vip = vip;
+    }
 
     public void updateName(String name, String lastname) {
         this.name = name;

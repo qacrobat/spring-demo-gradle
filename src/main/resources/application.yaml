@@ -1,0 +1,59 @@
+server:
+  port: 9020
+  servlet:
+    contextPath: /player
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    git:
+      mode: full
+
+spring:
+  jackson:
+    time-zone: UTC
+    default-property-inclusion: non_null
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    deserialization:
+      READ_UNKNOWN_ENUM_VALUES_AS_NULL: true
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+    generator:
+      WRITE_BIGDECIMAL_AS_PLAIN: true
+
+  datasource:
+    #    url: jdbc:h2:mem:testdb
+    #    username: sa
+    #    password:
+    #    driverClassName: org.h2.Driver
+    #    url: jdbc:h2:file:/data/demo
+    hikari:
+      minimumIdle: 5
+      maximumPoolSize: 15
+      # https://vladmihalcea.com/why-you-should-always-use-hibernate-connection-provider_disables_autocommit-for-resource-local-jpa-transactions/
+      # in combination with jpa.properties.hibernate.connection.provider_disables_autocommit: true
+  #      auto-commit: false
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        #        connection:
+        #          provider_disables_autocommit: true
+        dialect: org.hibernate.dialect.H2Dialect
+        temp:
+          # https://stackoverflow.com/questions/10075081/hibernate-slow-to-acquire-postgres-connection
+          use_jdbc_metadata_defaults: false
+      #        jdbc:
+      #          batch_size: 0
+      #          batch_versioned_data: false #Das Batching scheint von H2 mit dem aktuellen Hibernate nicht unterstützt zu sein. https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/chapters/batch/Batching.html
+      #          time_zone: UTC # We fixate the timezone. This is necessary for proper instant handling together with direct data writing of the cucumber tests.
+      open-in-view: false
+  h2:
+    console:
+      enabled: true
